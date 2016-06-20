@@ -19,9 +19,32 @@
     <!--后台叫做资源-->
     <!--没有其他和请求匹配的最后都和/ 匹配-->
     <url-pattern>/</url-pattern>
+    <url-pattern>/welcome</url-pattern>
+      <!--<url-pattern>/welcome/mm/tt</url-pattern>-->
+    <!--<url-pattern>/welcome/test</url-pattern>-->
     <!--<url-pattern>/welcome.jsp</url-pattern>-->
     <!--<url-pattern>/welcome.html</url-pattern>-->
     <!--<url-pattern>*.html</url-pattern>-->
   </servlet-mapping>
+
+  <servlet>
+  <servlet-name>crunchify1</servlet-name>
+  <servlet-class>
+    org.springframework.web.servlet.DispatcherServlet
+  </servlet-class>
+  <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>crunchify1</servlet-name>
+
+<!--TODO 搞清除匹配模式-->
+<!--后台叫做资源-->
+<!--没有其他和请求匹配的最后都和/ 匹配-->
+<url-pattern>/welcome/mm/tt</url-pattern>
+<!--<url-pattern>/welcome/test</url-pattern>-->
+<!--<url-pattern>/welcome.jsp</url-pattern>-->
+<!--<url-pattern>/welcome.html</url-pattern>-->
+<!--<url-pattern>*.html</url-pattern>-->
+</servlet-mapping>
 
 </web-app>
