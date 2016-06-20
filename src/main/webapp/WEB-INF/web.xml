@@ -14,9 +14,14 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>crunchify</servlet-name>
-    <url-pattern>/welcome.jsp</url-pattern>
-    <url-pattern>/welcome.html</url-pattern>
-    <url-pattern>*.html</url-pattern>
+
+    <!--TODO 搞清除匹配模式-->
+    <!--后台叫做资源-->
+    <!--没有其他和请求匹配的最后都和/ 匹配-->
+    <url-pattern>/</url-pattern>
+    <!--<url-pattern>/welcome.jsp</url-pattern>-->
+    <!--<url-pattern>/welcome.html</url-pattern>-->
+    <!--<url-pattern>*.html</url-pattern>-->
   </servlet-mapping>
 
 </web-app>

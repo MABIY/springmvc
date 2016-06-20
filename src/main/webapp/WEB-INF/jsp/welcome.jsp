@@ -8,9 +8,7 @@
     </style>
 </head>
 
-<body>$(message)
-
-            <br>
+<body>${message}
             <br>
 <div style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align:center;">
    Spring MVC Tutorial by <a href="http://crunchify.com">Crunchify</a>

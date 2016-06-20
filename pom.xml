@@ -64,12 +64,13 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
         <version>4.2.6.RELEASE</version>
-        <exclusions>
-          <exclusion>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-          </exclusion>
-        </exclusions>
+        <!--排除该包  output ：Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]]-->
+        <!--<exclusions>-->
+          <!--<exclusion>-->
+            <!--<groupId>commons-logging</groupId>-->
+            <!--<artifactId>commons-logging</artifactId>-->
+          <!--</exclusion>-->
+        <!--</exclusions>-->
       </dependency>
     </dependencies>
 
@@ -97,10 +98,10 @@
       <artifactId>spring-web</artifactId>
     </dependency>
 
-    <!--<dependency>-->
-      <!--<groupId>javax.servlet</groupId>-->
-      <!--<artifactId>jstl</artifactId>-->
-      <!--<version>1.2</version>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
   </dependencies>
 </project>
