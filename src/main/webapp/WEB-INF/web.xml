@@ -15,9 +15,11 @@
   <servlet-mapping>
     <servlet-name>crunchify</servlet-name>
 
-    <!--TODO 搞清除匹配模式-->
+
     <!--后台叫做资源-->
     <!--没有其他和请求匹配的最后都和/ 匹配-->
+    <!--TODO 搞清除匹配模式 规则如下-->
+    <!--The matching procedure has four simple rules. First, the container prefers an exact path match over a wildcard path match. Second, the container prefers to match the longest pattern. Third, the container prefers path matches over filetype matches. Finally, the pattern <url-pattern>/</url-pattern> always matches any request that no other pattern matches-->
     <url-pattern>/</url-pattern>
     <url-pattern>/welcome</url-pattern>
       <!--<url-pattern>/welcome/mm/tt</url-pattern>-->
@@ -26,25 +28,5 @@
     <!--<url-pattern>/welcome.html</url-pattern>-->
     <!--<url-pattern>*.html</url-pattern>-->
   </servlet-mapping>
-
-  <servlet>
-  <servlet-name>crunchify1</servlet-name>
-  <servlet-class>
-    org.springframework.web.servlet.DispatcherServlet
-  </servlet-class>
-  <load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-<servlet-name>crunchify1</servlet-name>
-
-<!--TODO 搞清除匹配模式-->
-<!--后台叫做资源-->
-<!--没有其他和请求匹配的最后都和/ 匹配-->
-<url-pattern>/welcome/mm/tt</url-pattern>
-<!--<url-pattern>/welcome/test</url-pattern>-->
-<!--<url-pattern>/welcome.jsp</url-pattern>-->
-<!--<url-pattern>/welcome.html</url-pattern>-->
-<!--<url-pattern>*.html</url-pattern>-->
-</servlet-mapping>
 
 </web-app>
