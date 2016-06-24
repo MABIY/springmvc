@@ -9,12 +9,18 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
-        <context:component-scan base-package="com.crunchify.controller"></context:component-scan>
-        <bean id ="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-                <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
-                <property name="prefix" value="/WEB-INF/jsp/"/>
-                <property name="suffix" value=".jsp"/>
-        </bean>
 
+    <context:component-scan base-package="com.crunchify.controller" />
+    <!--json 解析 天机dirver 启用 xml 代码-->
+    <mvc:annotation-driven/>
+
+    <import resource="classpath:configuration.xml"></import>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
 
 </beans>

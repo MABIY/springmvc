@@ -1,22 +1,39 @@
 package com.crunchify.controller;
 
+import com.lh.dao.JdbcCorporateEventDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
 
 /**
  * Created by liuhua on 16-6-1.
  */
-@Controller
+@RestController
 public class CrunchifyHelloWorld {
+
+    @Autowired
+    JdbcCorporateEventDao jdbcCorporateEventDao;
         @RequestMapping("/welcome")
     public ModelAndView helloWorld() {
 
-            User user = User.builder().age(1).name("300").build();
+            User user = new User();
             user.setAge(1);
             user.setId(1);
             String message = "<br><div style='text-align:center;'>"
                     + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********'"+ user.getAge()+"'</div><br><br>";
         return new ModelAndView("welcome","message",message);
+    }
+
+    @RequestMapping(value = "/user",method = RequestMethod.GET)
+    public   User  getUser() {
+        User user = new User();
+        user.setId( jdbcCorporateEventDao.countOfActorsByFirstName());
+        return user;
     }
 }
