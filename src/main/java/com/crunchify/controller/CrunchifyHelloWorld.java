@@ -1,13 +1,11 @@
 package com.crunchify.controller;
 
 import com.lh.dao.JdbcCorporateEventDao;
+import com.lh.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -19,6 +17,9 @@ public class CrunchifyHelloWorld {
 
     @Autowired
     JdbcCorporateEventDao jdbcCorporateEventDao;
+
+    @Autowired
+    UserMapper userMapper;
         @RequestMapping("/welcome")
     public ModelAndView helloWorld() {
 
@@ -35,5 +36,11 @@ public class CrunchifyHelloWorld {
         User user = new User();
         user.setId( jdbcCorporateEventDao.countOfActorsByFirstName());
         return user;
+    }
+
+    //mybatis xml 配置测试
+    @RequestMapping(value = "/mybatis/{id}",method = RequestMethod.GET)
+    public User getUserBymabits(@PathVariable long id) {
+        return userMapper.getUser(id);
     }
 }
